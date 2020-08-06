@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BookLibrary</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+
+    <script>
+      function recalculateViewportHeight() {
+        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+        const vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+  
+      recalculateViewportHeight();
+  
+      // We listen to the resize event
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        recalculateViewportHeight();
+      });
+    </script>
+    
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</h
