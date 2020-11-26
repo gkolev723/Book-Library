@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* Bootstrap */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Material Theme */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Our Styles */
+@import './assets/styles/index.scss';

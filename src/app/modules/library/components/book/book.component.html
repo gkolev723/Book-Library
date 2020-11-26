@@ -1,0 +1,15 @@
+<div class="book">
+  <img [src]="book.image | safeUrl" />
+  <h3>{{ book.title }} ({{ book.year }})</h3>
+  <h4>{{ book.price }}$</h4>
+  <h5>{{ book.genre }}</h5>
+
+  <div class="book-icons">
+    <button mat-fab color="basic" (click)="onEditBook($event)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-fab color="warn" (click)="onDeleteBook($event)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+@media (min-width: 576px) {
+  :host {
+    min-width: 400px;
+    display: block;
+  }
+}
+
+mat-form-field {
+  display: block;
+}
+
+button {
+  width: 100%;
+}
+
+.edit-book-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+
+  img {
+    height: 200px;
+    object-fit: contain;
+  }
+}
+
+.edit-book-upload {
+  margin-bottom: 1.25rem;
+}

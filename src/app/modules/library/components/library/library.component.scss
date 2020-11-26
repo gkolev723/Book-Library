@@ -1,0 +1,23 @@
+.container-fluid {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+
+  header {
+    mat-form-field {
+      display: block;
+    }
+
+    button {
+      width: 100%;
+      height: calc(100% - 1.25rem);
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  main {
+    overflow: auto;
+    flex: 1;
+  }
+}

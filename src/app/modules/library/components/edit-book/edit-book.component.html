@@ -1,0 +1,33 @@
+<form [formGroup]="editBookForm">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Title" formControlName="title" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Year" formControlName="year" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Genre</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Genre" formControlName="genre" />
+  </mat-form-field>
+
+  <div *ngIf="editBookForm.controls['image'].value" class="edit-book-image">
+    <mat-spinner *ngIf="imageUploading"></mat-spinner>
+
+    <img *ngIf="!imageUploading" [src]="editBookForm.controls['image'].value | safeUrl" />
+  </div>
+
+  <input #upload hidden type="file" autocomplete="off" placeholder="Image" accept="image/*" (input)="uploadImage(upload)" />
+
+  <button type="button" class="edit-book-upload" mat-raised-button color="warn" (click)="onUploadImageClick(upload)">Upload Image</button>
+
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input type="text" autocomplete="off" matInput placeholder="Price" formControlName="price" />
+  </mat-form-field>
+
+  <button type="button" mat-raised-button color="primary" [disabled]="!editBookForm.valid" (click)="onUpdateBook()">{{ data ? 'Update' : 'Add' }} Book</button>
+</form>
